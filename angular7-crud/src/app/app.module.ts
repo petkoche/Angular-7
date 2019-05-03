@@ -36,6 +36,7 @@ import {
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatInputModule,
     MatPaginatorModule,

@@ -12,6 +12,7 @@ export class ProductDetailComponent implements OnInit {
   
   product: Product = { _id: '', prod_name: '', prod_desc: '', prod_price: null, updated_at: null };
   isLoadingResults = true;
+  imgUrl = ""
   
   constructor(private route: ActivatedRoute, private api: ApiService, private router: Router) { }
 
@@ -20,11 +21,19 @@ export class ProductDetailComponent implements OnInit {
     this.getProductDetails(this.route.snapshot.params['id']);
   }
 
+  getProductImage() {
+    this.api.getImage(this.product.prod_name)
+      .subscribe(data => {
+        console.log(data);
+      })
+  }
+
   getProductDetails(id) {
     this.api.getProduct(id)
       .subscribe(data => {
         this.product = data;
         console.log(this.product);
+        this.getProductImage();
         this.isLoadingResults = false;
       });
   }

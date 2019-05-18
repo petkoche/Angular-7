@@ -6,14 +6,14 @@
   <div class="button-row">
     <a mat-flat-button color="primary" [routerLink]="['/products']"><mat-icon>list</mat-icon></a>
   </div>
-  <mat-card class="example-card">
+  <mat-card class="example-card" *ngIf="!isLoadingResults">
     <mat-card-header>
       <mat-card-title><h2>{{product.prod_name}}</h2></mat-card-title>
       <mat-card-subtitle>{{product.prod_desc}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <dl>
-        <dt>Product Price:</dt>
+        <dt>Product Price: </dt>
         <dd>{{product.prod_price}}</dd>
         <dt>Updated At:</dt>
         <dd>{{product.updated_at | date}}</dd>

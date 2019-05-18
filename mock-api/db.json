@@ -1,0 +1,25 @@
+{
+    "products": [
+        {
+            "_id": "5",
+            "prod_name": "Creative K520",
+            "prod_desc": "Brilliant sound system with a lot of features.",
+            "prod_price": "657",
+            "updated_at": 1558181722441
+        },
+        {
+            "_id": "2",
+            "prod_name": "Volkswagen",
+            "prod_desc": "A car that enables you to roam freely.",
+            "prod_price": 15999,
+            "updated_at": 1558206805508
+        },
+        {
+            "_id": "3",
+            "prod_name": "Samsung S8",
+            "prod_desc": "A phone that enables you to contact everybody.",
+            "prod_price": "794",
+            "updated_at": 1558206836705
+        }
+    ]
+}

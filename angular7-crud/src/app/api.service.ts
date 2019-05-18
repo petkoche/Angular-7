@@ -3,11 +3,14 @@ import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
 import { Product } from './models/product';
+import { environment } from '../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
-const apiUrl = "http://localhost:3005";
+
+const apiUrl = environment.apiUrl;
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,14 +21,6 @@ export class ApiService {
 
   getProducts (): Observable<Product[]> {
     return this.http.get<Product[]>(`${apiUrl}/products`)
-      .pipe(
-        tap(products => console.log('Fetch products', products)),
-        catchError(this.handleError('getProducts', []))
-      );
-  }
-  
-  getImage (searchWord): Observable<any> {
-    return this.http.get<any>(`https://serpapi.com/search.json?q=${searchWord}&tbm=isch&ijn=0`)
       .pipe(
         tap(products => console.log('Fetch products', products)),
         catchError(this.handleError('getProducts', []))

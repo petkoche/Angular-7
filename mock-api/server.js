@@ -3,6 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const jsonServer = require('json-server');
 const cors = require('cors');
+const uuidv1 = require('uuid/v1');
 
 const PORT = 3005;
 
@@ -66,7 +67,7 @@ server.post('/product', (req, res) => {
   const { prod_name, prod_desc, prod_price  } = req.body;
 
   const productToCreate = {
-    _id: (db.products.length + 1).toString(),
+    _id: uuidv1(),
     prod_name,
     prod_desc,
     prod_price: +prod_price,

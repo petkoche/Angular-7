@@ -18,9 +18,14 @@ server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
 
 // Get req
-server.get('/products', (_, res) => {
+server.get('/products', (req, res) => {
+  const { filter } = req.query;
   const db = getDbData();
   products = db.products;
+
+  if(filter) {
+    products = products.filter(x => x.prod_name.toLowerCase().includes(filter.toLowerCase()));
+  }
   return res.status(200).json(products);
 });
 

@@ -1,3 +1,11 @@
+<mat-form-field class="example-form-field">
+    <input matInput type="text" [(ngModel)]="value">
+    <mat-placeholder class="placeholder">Search</mat-placeholder>
+    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+      <mat-icon>close</mat-icon>
+    </button>    
+  </mat-form-field>
+  <button (click)="filterProducts()" mat-flat-button color="primary"><mat-icon>search</mat-icon></button>
 <div class="example-container mat-elevation-z8">
     <div class="example-loading-shade"
          *ngIf="isLoadingResults">
@@ -19,6 +27,12 @@
         <ng-container matColumnDef="prod_price">
           <th mat-header-cell *matHeaderCellDef>Product Price</th>
           <td mat-cell *matCellDef="let row">$ {{row.prod_price}}</td>
+        </ng-container>
+
+        <!-- Product Price Column -->
+        <ng-container matColumnDef="updated_at">
+          <th mat-header-cell *matHeaderCellDef>Date</th>
+          <td mat-cell *matCellDef="let row">{{row.updated_at | date}}</td>
         </ng-container>
   
         <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>

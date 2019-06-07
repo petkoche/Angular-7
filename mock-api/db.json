@@ -1,1 +1,18 @@
-{"products":[{"_id":"bcbb1d90-894c-11e9-8bf3-eb995fccc438","prod_name":"Volkswagen","prod_desc":"A phone that enables you to contact everybody.","prod_price":798,"updated_at":1559929828841},{"_id":"deac89c0-894c-11e9-8bf3-eb995fccc438","prod_name":"Samsung s8","prod_desc":"Samsung is the best phone","prod_price":999,"updated_at":1559929885788}]}
+{
+    "products": [
+        {
+            "_id": "bcbb1d90-894c-11e9-8bf3-eb995fccc438",
+            "prod_name": "Volkswagen",
+            "prod_desc": "A phone that enables you to contact everybody.",
+            "prod_price": 798,
+            "updated_at": 1559929828841
+        },
+        {
+            "_id": "deac89c0-894c-11e9-8bf3-eb995fccc438",
+            "prod_name": "Samsung s8",
+            "prod_desc": "Samsung is the best phone",
+            "prod_price": 999,
+            "updated_at": 1559929885788
+        }
+    ]
+}
